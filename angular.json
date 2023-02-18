@@ -105,6 +105,212 @@
           }
         }
       }
+    },
+    "sioam": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/sioam",
+      "sourceRoot": "projects/sioam/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/sioam",
+            "index": "projects/sioam/src/index.html",
+            "main": "projects/sioam/src/main.ts",
+            "polyfills": "projects/sioam/src/polyfills.ts",
+            "tsConfig": "projects/sioam/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/sioam/src/favicon.ico",
+              "projects/sioam/src/assets"
+            ],
+            "styles": [
+              "projects/sioam/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/sioam/src/environments/environment.ts",
+                  "with": "projects/sioam/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "sioam:build:production"
+            },
+            "development": {
+              "browserTarget": "sioam:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "sioam:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sioam/src/test.ts",
+            "polyfills": "projects/sioam/src/polyfills.ts",
+            "tsConfig": "projects/sioam/tsconfig.spec.json",
+            "karmaConfig": "projects/sioam/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/sioam/src/favicon.ico",
+              "projects/sioam/src/assets"
+            ],
+            "styles": [
+              "projects/sioam/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "slogger": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/slogger",
+      "sourceRoot": "projects/slogger/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/slogger",
+            "index": "projects/slogger/src/index.html",
+            "main": "projects/slogger/src/main.ts",
+            "polyfills": "projects/slogger/src/polyfills.ts",
+            "tsConfig": "projects/slogger/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/slogger/src/favicon.ico",
+              "projects/slogger/src/assets"
+            ],
+            "styles": [
+              "projects/slogger/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/slogger/src/environments/environment.ts",
+                  "with": "projects/slogger/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "slogger:build:production"
+            },
+            "development": {
+              "browserTarget": "slogger:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "slogger:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/slogger/src/test.ts",
+            "polyfills": "projects/slogger/src/polyfills.ts",
+            "tsConfig": "projects/slogger/tsconfig.spec.json",
+            "karmaConfig": "projects/slogger/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/slogger/src/favicon.ico",
+              "projects/slogger/src/assets"
+            ],
+            "styles": [
+              "projects/slogger/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "slogger-frontend"
